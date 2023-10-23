@@ -1,0 +1,12 @@
+{
+	"for_description_of_this_file_see": "https://github.com/function61/turbobob",
+	"version_major": 1,
+	"project_name": "Ncdu",
+	"meta": {
+		"description": "Container image for Ncdu - a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don’t have an entire graphical setup available, but it is a useful tool even on regular desktop systems.",
+		"website": "https://dev.yorhel.nl/ncdu"
+	},
+	"docker_images": [
+		{ "image": "ghcr.io/r-xs-fi/ncdu", "platforms": ["linux/amd64", "linux/arm64", "linux/arm/v7", "linux/riscv64"], "tag_latest": true }
+	]
+}

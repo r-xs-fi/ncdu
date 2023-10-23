@@ -1,0 +1,11 @@
+{
+	"needs_privileged_because": "needs to be able to (readonly) access all directory listings.",
+	"usage_examples": [
+		{
+			"title": "Calculate disk usage",
+			"docker_opts": ["-v", "$(pwd):/host:ro"],
+			"cmd": "/host/tmp",
+			"example_output": "ncdu 1.17 ~ Use the arrow keys to navigate, press ? for help\n--- /host/tmp ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n    1.4 GiB [#################################] /build\n   46.5 MiB [#                                ]  fog-hyper-from-container\n    3.9 MiB [                                 ] /uppdatera\n    1.7 MiB [                                 ]  Varasto_on-20231007T102417Z-001.zip\n    1.7 MiB [                                 ] /vlb-100\n  336.0 KiB [                                 ]  26916151.pdf\n  236.0 KiB [                                 ]  Peek 2023-10-15 18-27.mp4\n   24.0 KiB [                                 ]  Peek 2023-10-15 18-05.mp4"
+		}
+	]
+}
