@@ -31,3 +31,34 @@ ncdu 1.17 ~ Use the arrow keys to navigate, press ? for help
 | Linux | arm64 | ✅       | Raspberry Pi with 64-bit OS, other single-board computers, Apple M1 etc. |
 | Linux | arm/v7 | ✅       | Raspberry Pi with 32-bit OS, older phones |
 | Linux | riscv64 | ✅       | More exotic hardware |
+
+## How does this software get to me?
+
+```mermaid
+flowchart TD
+    subgraph "Origin"
+        sourcerepo["Original source repo"]
+    end
+    subgraph "Alpine infrastructure"
+        Alpine_build[Alpine build machine]
+        Alpine_package[Alpine package registry: ncdu 🔗]
+
+        click Alpine_package "https://pkgs.alpinelinux.org/package/edge/community/x86/ncdu"
+    end
+    subgraph "Packaging build"
+        rxsfi_build["r.xs.fi build (GitHub Actions)"]
+    end
+    subgraph "Container Registry"
+        r_xs_fi_package_registry[ghcr.io/r-xs-fi/ncdu 🔗]
+
+        click r_xs_fi_package_registry "https://ghcr.io/r-xs-fi/ncdu"
+    end
+    subgraph "user"
+        docker_run[$ docker run ...]
+    end
+    sourcerepo -- downloads --> Alpine_build -- stores --> Alpine_package
+    Alpine_package -- download --> rxsfi_build
+    rxsfi_build -- push --> r_xs_fi_package_registry
+    r_xs_fi_package_registry -- pull --> docker_run[$ docker run ...]
+
+```

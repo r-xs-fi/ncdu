@@ -1,4 +1,5 @@
 {
+	"supply_chain_descriptor": "alpine-package:ncdu",
 	"needs_privileged_because": "needs to be able to (readonly) access all directory listings.",
 	"usage_examples": [
 		{
