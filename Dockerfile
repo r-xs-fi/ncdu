@@ -1,6 +1,4 @@
-# edge because:
-# - `riscv64` only available in there
-FROM alpine:edge
+FROM alpine:latest
 
 ENTRYPOINT ["/usr/bin/ncdu"]
 
